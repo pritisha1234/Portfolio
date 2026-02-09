@@ -1,54 +1,98 @@
-export default function CuteWindow({ onCLick }: { onCLick: () => void }) {
+type DesktopWindowProps = {
+    onCLick: () => void;
+    title: string;
+    subtitle?: string;
+    buttonLabel: string;
+    showPolaroid?: boolean;
+    children?: React.ReactNode;
+};
+
+export default function DesktopWindow({
+    onCLick,
+    title,
+    subtitle,
+    buttonLabel,
+    showPolaroid = false,
+    children,
+}: DesktopWindowProps) {
     return (
         <div className="flex items-center justify-center">
             {/* Window */}
-            <div className="w-182.5 bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
+            <div className="w-[720px] h-[420px] bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
                 {/* Polaroid Photo */}
-                <div className="absolute -bottom-10 -left-8 -rotate-6 z-20">
-                    <div className="absolute -top-2 left-6 w-12 h-4 bg-yellow-200 opacity-70 rotate-3"></div>
+                {showPolaroid && (
+                    <div className="absolute -bottom-16 -left-12 -rotate-6 z-20">
+                        <div className="absolute -top-3 left-10 w-20 h-6 bg-yellow-200 opacity-70 rotate-3"></div>
 
-                    <div className="bg-white p-2 pb-6 border-2 border-[#7a4b5e] shadow-lg w-28">
-                        <img
-                            src="/Valetines/sushil.jpg"
-                            className="w-full h-24 object-cover"
-                        />
-                        <p className="text-[10px] text-center mt-2 text-[#5a2f3d] font-handwriting">
-                            💕
-                        </p>
+                        <div className="bg-white p-3 pb-10 border-2 border-[#7a4b5e] shadow-lg w-48">
+                            <img
+                                src="/Valetines/headshot.jpeg"
+                                className="w-full h-52 object-cover"
+                            />
+                            <p className="text-xs text-center mt-3 text-[#5a2f3d] font-handwriting">
+                                Know more about me
+                            </p>
+                        </div>
                     </div>
-                </div>
-
+                )}
                 {/* Title bar */}
-                <div className="flex bg-[#f79ca5] rounded-t-xl items-center justify-between border-b-4 border-[#7a4b5e]" style={{ padding: '12px 16px' }}>
-                    <span className="text-[#5a2f3d] font-bold text-sm">
-                        Sushil OS &lt;3
+                <div className="flex bg-[#f79ca5] rounded-t-xl items-center justify-between border-b-4 border-[#7a4b5e] px-4 py-3">
+                    <span className="text-[#5a2f3d] font-bold text-sm tracking-wide">
+                        {title}
                     </span>
 
                     {/* Window buttons */}
                     <div className="flex gap-2">
-                        <button className="w-8 h-8 bg-[#ffd966] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold hover:bg-[#ffed99]">−</button>
-                        <button className="w-8 h-8 bg-[#a4d4ae] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold hover:bg-[#c4f4ce]">□</button>
-                        <button className="w-8 h-8 bg-[#f26d6d] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold hover:bg-[#ff8d8d]">✕</button>
+                        <button
+                            aria-label="minimize"
+                            className="w-6 h-6 bg-[#ffd966] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold"
+                        >
+                            −
+                        </button>
+                        <button
+                            aria-label="maximize"
+                            className="w-6 h-6 bg-[#a4d4ae] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold"
+                        >
+                            □
+                        </button>
+                        <button
+                            aria-label="close"
+                            className="w-6 h-6 bg-[#f26d6d] rounded-sm border border-[#5a2f3d] flex items-center justify-center text-[#5a2f3d] font-bold"
+                        >
+                            ✕
+                        </button>
                     </div>
                 </div>
 
                 {/* Content */}
-                <div className="flex flex-col gap-20 justify-between h-full" style={{ padding: '24px' }}>
-                    <div className="flex flex-col items-center justify-center flex-1">
-                        <span className="p-6">
-                            Made with 💖 by Pritisha
-                        </span>
-                        <button
-                            className="pixel-button"
-                            onClick={onCLick}
-                        >
-                            ▶ PRESS START
-                        </button>
+                <div className="flex flex-col justify-between gap-12 p-6">
+                    <div className="flex flex-col items-center text-center gap-4">
+                        {subtitle && (
+                            <p className="text-xs tracking-widest text-[#5a2f3d] opacity-80">
+                                {subtitle}
+                            </p>
+                        )}
+
+                        {children || (
+                            <>
+                                <span className="text-xs text-[#5a2f3d]">
+                                    Full-Stack Engineer · React · Node · Python
+                                </span>
+
+                                <button
+                                    className="pixel-button mt-2"
+                                    onClick={onCLick}
+                                >
+                                    {buttonLabel}
+                                </button>
+                            </>
+                        )}
                     </div>
 
-                    <h1 className="text-xl tracking-widest text-[#5a2f3d] text-right">
-                        WITH LOVE,<br />Baby
-                    </h1>
+                    {/* Footer */}
+                    <div className="text-[10px] tracking-widest text-[#5a2f3d] text-right opacity-70">
+                        SYSTEM STATUS: STABLE
+                    </div>
                 </div>
             </div>
         </div>
