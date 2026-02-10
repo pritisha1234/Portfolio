@@ -18,7 +18,7 @@ export default function DesktopWindow({
     return (
         <div className="flex items-center justify-center">
             {/* Window */}
-            <div className="w-[720px] h-[420px] bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
+            <div className="flex flex-col justify-between w-[820px] h-[500px] bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
                 {/* Polaroid Photo */}
                 {showPolaroid && (
                     <div className="absolute -bottom-16 -left-12 -rotate-6 z-20">
@@ -89,10 +89,11 @@ export default function DesktopWindow({
                         )}
                     </div>
 
-                    {/* Footer */}
-                    <div className="text-[10px] tracking-widest text-[#5a2f3d] text-right opacity-70">
-                        SYSTEM STATUS: STABLE
-                    </div>
+
+                </div>
+                {/* Footer */}
+                <div className="text-[10px] tracking-widest text-[#5a2f3d] text-right opacity-70 p-8">
+                    SYSTEM STATUS: STABLE
                 </div>
             </div>
         </div>
