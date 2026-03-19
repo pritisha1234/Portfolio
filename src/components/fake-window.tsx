@@ -16,9 +16,9 @@ export default function DesktopWindow({
     children,
 }: DesktopWindowProps) {
     return (
-        <div className="flex items-center justify-center">
+        <div className="flex items-start justify-center pb-16">
             {/* Window */}
-            <div className="flex flex-col justify-between w-[820px] h-[500px] bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
+            <div className="flex flex-col justify-between w-[820px] h-[450px] bg-[#fdecec] rounded-2xl border-4 border-[#7a4b5e] shadow-xl relative">
                 {/* Polaroid Photo */}
                 {showPolaroid && (
                     <div className="absolute -bottom-16 -left-12 -rotate-6 z-20">
@@ -68,7 +68,7 @@ export default function DesktopWindow({
                 <div className="flex flex-col justify-between gap-12 p-6">
                     <div className="flex flex-col items-center text-center gap-4">
                         {subtitle && (
-                            <p className="text-xs tracking-widest text-[#5a2f3d] opacity-80">
+                            <p className="text-xs text-green-600 tracking-widest opacity-80">
                                 {subtitle}
                             </p>
                         )}
