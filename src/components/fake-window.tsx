@@ -26,7 +26,7 @@ export default function DesktopWindow({
 
                         <div className="bg-white p-3 pb-10 border-2 border-[#7a4b5e] shadow-lg w-48">
                             <img
-                                src="/Valetines/headshot.jpeg"
+                                src="/Portfolio/headshot.jpeg"
                                 className="w-full h-52 object-cover"
                             />
                             <p className="text-xs text-center mt-3 text-[#5a2f3d] font-handwriting">

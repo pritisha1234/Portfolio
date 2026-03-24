@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <BrowserRouter basename="/Valetines">
+    <BrowserRouter basename="/Portfolio">
       <div className="pixel-grid h-screen w-full relative">
         <div className="border-4 border-black h-full w-full flex items-center justify-center">
           <Routes>

@@ -40,28 +40,28 @@ export default function Desktop() {
             className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer folder-icon"
             onClick={() => openWindow("about")}
           >
-            <img src="/Valetines/folder_icon.png" alt="" className="w-20 h-20" />
+            <img src="/Portfolio/folder_icon.png" alt="" className="w-20 h-20" />
             <span className="text-[10px] text-[#5a2f3d]">ABOUT</span>
           </button>
           <button
             className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer folder-icon"
             onClick={() => openWindow("projects")}
           >
-            <img src="/Valetines/folder_icon.png" alt="" className="w-20 h-20" />
+            <img src="/Portfolio/folder_icon.png" alt="" className="w-20 h-20" />
             <span className="text-[10px] text-[#5a2f3d]">PROJECTS</span>
           </button>
           <button
             className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer folder-icon"
             onClick={() => openWindow("architecture")}
           >
-            <img src="/Valetines/folder_icon.png" alt="" className="w-20 h-20" />
+            <img src="/Portfolio/folder_icon.png" alt="" className="w-20 h-20" />
             <span className="text-[10px] text-[#5a2f3d]">ARCHITECTURE</span>
           </button>
           <button
             className="flex flex-col items-center gap-1 bg-transparent border-none cursor-pointer folder-icon"
             onClick={() => openWindow("contact")}
           >
-            <img src="/Valetines/folder_icon.png" alt="" className="w-20 h-20" />
+            <img src="/Portfolio/folder_icon.png" alt="" className="w-20 h-20" />
             <span className="text-[10px] text-[#5a2f3d]">CONTACT</span>
           </button>
         </div>
