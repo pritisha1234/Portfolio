@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && cd dist && git init && git add -A && git commit -m 'Deploy' && git push -f https://github.com/pritisha1234/Valetines master:main && cd .."
+    "deploy": "npm run build && cd dist && git init && git add -A && git commit -m 'Deploy' && git push -f https://github.com/pritisha1234/Portfolio master:main && cd .."
   },
   "dependencies": {
     "react": "^18.2.0",
